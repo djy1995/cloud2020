@@ -1,0 +1,42 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.djy.springcloud.dao.BookDao">
+    <resultMap id="result" type="com.djy.springcloud.entity.Book">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" />
+        <result property="price" column="price" jdbcType="INTEGER"/>
+
+    </resultMap>
+
+    <select id="ListBook" resultMap="result">
+		SELECT * FROM book
+	</select>
+
+    <select id="findBookById" resultMap="result">
+		SELECT * FROM book where id=#{id}
+	</select>
+
+    <insert id="insertBook" parameterType="Book"
+            keyProperty="ID" useGeneratedKeys="false">
+
+		INSERT INTO book
+		(
+		id,name,price
+		)
+		VALUES (
+		#{id, jdbcType=INTEGER},
+		#{name, jdbcType=VARCHAR},
+		#{price, jdbcType=INTEGER}
+		)
+	</insert>
+
+    <delete id="delete" parameterType="int">
+		delete from book where id=#{id}
+	</delete>
+
+    <update id="Update" parameterType="com.djy.springcloud.entity.Book">
+	update book set book.name=#{name},book.price=#{price} where user.id=#{id}
+	</update>
+</mapper>

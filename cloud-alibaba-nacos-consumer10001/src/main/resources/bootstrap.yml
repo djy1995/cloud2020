@@ -1,0 +1,23 @@
+server:
+  port: 10001
+
+
+spring:
+  application:
+    name: nacos-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

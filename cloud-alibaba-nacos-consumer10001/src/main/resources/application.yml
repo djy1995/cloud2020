@@ -1,0 +1,6 @@
+service-url:
+  nacos-user-service: http://nacos-payment
+
+spring:
+  profiles:
+    active: dev
