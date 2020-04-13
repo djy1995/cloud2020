@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<h1>HELLO WELCOME TO 首页</h1>
+<div>
+    <input type="text">
+    <p>Hello ???</p>
+    {{ message }}
+
+    <script type="text/javascript">
+        var app = new Vue(
+            {
+                el: '#app'
+                data:{
+                    message: 'Hello Vue!!!!!'
+                }
+            }
+        );
+    </script>
+</div>
+</body>
+</html>
